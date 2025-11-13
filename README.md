@@ -74,25 +74,8 @@ Run tests (if applicable):
 
 ./tests/run-tests.sh
 
-🤝 Contributing
 
-Contributions are welcome! 🎉
 
-    Fork the repo
 
-    Create a feature branch
 
-    Submit a Pull Request
 
-For major changes, please open an issue first to discuss your ideas.
-📜 License
-
-This project is licensed under the MIT License
-
-👤 Author
-
-Brian Smith
-
-    GitHub: @brian-smith-git
-
-Fedora Project Enthusiast 🐧
