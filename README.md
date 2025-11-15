@@ -22,7 +22,7 @@ A lightweight tool for Fedora Linux that automatically cleans up old DNF package
 Clone the repo and run the installer:
 
 ```bash
-git clone https://github.com/brian-smith-git/dnf-autoclean.git
+git clone https://github.com/brianrsmith1/dnf-autoclean.git
 cd dnf-autoclean
 chmod +x install.sh
 ./install.sh
