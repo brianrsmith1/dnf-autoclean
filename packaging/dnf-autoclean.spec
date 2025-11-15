@@ -4,7 +4,7 @@ Release:        1%{?dist}
 Summary:        Automatic cleanup tool for Fedora kernels and orphan packages
 
 License:        MIT
-URL:            https://github.com/brian-smith-git/dnf-autoclean
+URL:            https://github.com/brianrsmith1/dnf-autoclean
 Source0:        %{name}-%{version}.tar.gz
 
 Requires:       dnf, python3, polkit
@@ -40,5 +40,5 @@ install -m 644 org.brian-smith.dnf-autoclean.policy %{buildroot}/usr/share/polki
 /usr/share/polkit-1/actions/org.brian-smith.dnf-autoclean.policy
 
 %changelog
-* Sat Sep 27 2025 Brian Smith <brian-smith-git> - 1.0.0-1
+* Sat Sep 27 2025 Brian Smith <brianrsmith1> - 1.0.0-1
 - Initial release
