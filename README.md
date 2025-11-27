@@ -1,4 +1,4 @@
-# 🧹 DNF AutoClean
+#  DNF AutoClean
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)  
 [![Fedora](https://img.shields.io/badge/Supported-Fedora%2038%2B-blue)](https://getfedora.org/)  
@@ -7,17 +7,17 @@ A lightweight tool for Fedora Linux that automatically cleans up old DNF package
 
 ---
 
-## ✨ Features
-- 🗑️ Automatically removes unused DNF packages
-- 🧑‍💻 Keeps the **most recent kernels** (default: last 2)
-- ⏰ Runs on a **configurable schedule** via `systemd`
-- ⚙️ Simple configuration in `/etc/dnf-autoclean.conf`
-- 📦 Includes installer (`install.sh`) for easy setup
-- 🐧 Designed specifically for **Fedora Linux**
+##  Features
+-  Automatically removes unused DNF packages
+-  Keeps the **most recent kernels** (default: last 2)
+-  Runs on a **configurable schedule** via `systemd`
+-  Simple configuration in `/etc/dnf-autoclean.conf`
+-  Includes installer (`install.sh`) for easy setup
+-  Designed specifically for **Fedora Linux**
 
 ---
 
-## 📦 Installation
+##  Installation
 
 Clone the repo and run the installer:
 
@@ -42,7 +42,7 @@ Example:
 retain_kernels = 2
 schedule = weekly   # daily, weekly, or monthly
 
-▶️ Usage
+ Usage
 
 Run manually:
 
@@ -54,7 +54,7 @@ Check service status:
 
 systemctl status dnf-autoclean.timer
 
-📂 Project Structure
+ Project Structure
 
 dnf-autoclean/
 ├── install.sh
