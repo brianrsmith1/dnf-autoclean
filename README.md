@@ -1,81 +1,101 @@
-#  DNF AutoClean
+# DNF AutoClean
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)  
-[![Fedora](https://img.shields.io/badge/Supported-Fedora%2038%2B-blue)](https://getfedora.org/)  
+[![Fedora](https://img.shields.io/badge/Supported-Fedora%2038%2B-blue)](https://getfedora.org/)
 
-A lightweight tool for Fedora Linux that automatically cleans up old DNF packages and kernels — keeping your system lean, fast, and clutter-free.
+A lightweight Fedora tool that automatically removes unused DNF packages and old kernels to keep systems lean.
 
----
+## Features
 
-##  Features
--  Automatically removes unused DNF packages
--  Keeps the **most recent kernels** (default: last 2)
--  Runs on a **configurable schedule** via `systemd`
--  Simple configuration in `/etc/dnf-autoclean.conf`
--  Includes installer (`install.sh`) for easy setup
--  Designed specifically for **Fedora Linux**
+- Removes unused DNF packages
+- Keeps a configurable number of recent kernels (default: 2)
+- Runs on a configurable schedule via systemd timer
+- Simple configuration at `/etc/dnf-autoclean.conf`
+- Installer script for quick setup
 
----
+## Requirements
 
-##  Installation
+- Fedora 38+ (or compatible)
+- dnf available on the system
+- systemd
 
-Clone the repo and run the installer:
+## Installation
+
+Clone and run the installer:
 
 ```bash
 git clone https://github.com/brianrsmith1/dnf-autoclean.git
 cd dnf-autoclean
 chmod +x install.sh
 ./install.sh
+```
 
-Uninstall at any time:
+Uninstall:
 
+```bash
 sudo dnf remove dnf-autoclean
+```
 
-⚙️ Configuration
+## Configuration
 
-Default config file:
-/etc/dnf-autoclean.conf
+Default config: `/etc/dnf-autoclean.conf`
 
 Example:
 
+```ini
 [general]
 retain_kernels = 2
-schedule = weekly   # daily, weekly, or monthly
+schedule = weekly   # values: daily | weekly | monthly
+```
 
- Usage
+- retain_kernels: number of recent kernels to keep
+- schedule: how often the timer runs
 
-Run manually:
+## Usage
 
+Run immediately:
+
+```bash
 sudo dnf-autoclean
+```
 
-Or let systemd handle it automatically according to your configured schedule.
+Enable and start automatic runs:
 
-Check service status:
+```bash
+sudo systemctl enable --now dnf-autoclean.timer
+```
 
+Check timer or service status:
+
+```bash
 systemctl status dnf-autoclean.timer
+journalctl -u dnf-autoclean.service --no-pager
+```
 
- Project Structure
+## Project Layout
 
-dnf-autoclean/
-├── install.sh
-├── src/dnf-autoclean.sh
-├── man/dnf-autoclean.1
-├── packaging/dnf-autoclean.spec
-├── .github/workflows/build.yml
-└── LICENSE
+- install.sh
+- src/dnf-autoclean.sh
+- man/dnf-autoclean.1
+- packaging/dnf-autoclean.spec
+- .github/workflows/build.yml
+- LICENSE
+- README.md
 
-🛠 Development
+## Development
 
-Build RPM package locally:
+Build RPM:
 
+```bash
 rpmbuild -ba packaging/dnf-autoclean.spec
+```
 
-Run tests (if applicable):
+Run tests (if present):
 
+```bash
 ./tests/run-tests.sh
+```
 
+## License
 
-
-
-
-
+MIT — see LICENSE for details.
